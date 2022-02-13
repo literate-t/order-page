@@ -1,0 +1,22 @@
+.screen-out {
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+.scroll-x {
+    overflow-x: auto;
+    overflow-y: hidden; // ?
+    white-space: nowrap;
+    // for mobile
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; // ie, edge
+    scrollbar-width: none; // firefox
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+}
