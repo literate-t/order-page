@@ -631,6 +631,35 @@ textarea::-webkit-outer-spin-button {
   display: flex;
   align-items: center;
   padding: 18px;
+  margin: 0 -18px;
+}
+
+.menu-item:not(:last-child) {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.menu-item .menu-detail {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.menu-item .menu-detail .menu-image-area {
+  position: relative;
+  flex-shrink: 0;
+  margin-right: 12px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.menu-item .menu-detail .menu-image-area:not(.no-image)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.06);
 }
 
 .container {

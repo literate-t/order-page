@@ -2,4 +2,33 @@
     display:flex;
     align-items: center;
     padding: $m-padding;
+    margin: 0 -1 * $m-padding;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $booking-color-border144;    
+    }
+
+    .menu-detail {
+        display:flex;
+        align-items: center;
+        flex: 1; // 없어도 되지 않나
+
+        .menu-image-area {
+            position:relative;
+            flex-shrink: 0;
+            margin-right: 12px;
+            border-radius: 5px;
+            overflow: hidden; // after 요소에서 네 꼭지를 꽉 채워서 그리기 때문에 삐져나온 곳을 깍기 위함
+
+            &:not(.no-image)::after {
+                content:'';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0,0,0,0.06);
+            }
+        }
+    }
 }
