@@ -387,6 +387,82 @@ textarea::-webkit-outer-spin-button {
   color: #333;
 }
 
+.amount-select {
+  display: flex;
+  align-items: center;
+  height: 35px;
+}
+
+.amount-select .btn-minus,
+.amount-select .btn-plus {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #e3e3e3;
+  background-color: #f8fafb;
+  color: #333;
+}
+
+.amount-select .btn-minus.enabled,
+.amount-select .btn-plus.enabled {
+  border-color: #00d780;
+  background-color: #00d780;
+  color: #fff;
+}
+
+.amount-select .btn-minus:disabled,
+.amount-select .btn-plus:disabled {
+  color: #eee;
+}
+
+.amount-select .btn-minus::before,
+.amount-select .btn-plus::before {
+  content: '';
+  display: block;
+  width: 13px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.amount-select .btn-minus {
+  border-radius: 3px 0 0 3px;
+}
+
+.amount-select .btn-plus {
+  border-radius: 0 3px 3px 0;
+}
+
+.amount-select .btn-plus::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  --left:50%;
+  width: 1px;
+  height: 13px;
+  background-color: currentColor;
+  transform: translateY(-50%);
+}
+
+.amount-select .amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 35px;
+  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
+  font-weight: 700;
+  color: #242424;
+}
+
+.amount-select .amount.disabled {
+  font-weight: 400;
+  color: #c9c9c9;
+}
+
 .menu-detail-area {
   background-color: #fff;
 }
@@ -497,6 +573,218 @@ textarea::-webkit-outer-spin-button {
 .menu-detail-area .order-type-area .type-select .ico-n-logo {
   margin-right: 4px;
   width: 20px;
+}
+
+.menu-detail-area .order-type-area .type-select .tab-switch-box {
+  margin-top: 0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.menu-detail-area .order-type-area .type-select .tab-switch-box .tab-switch {
+  line-height: 37px;
+  font-size: 13px;
+  width: 80px;
+}
+
+.menu-detail-area .order-type-area .type-select .tab-switch-box .tab-switch.is-active {
+  flex: 1;
+  border-radius: 5px;
+}
+
+.menu-detail-area .order-type-area .type-select .tab-switch-box .tab-switch.is-active::after {
+  display: none;
+}
+
+.menu-detail-area .order-type-area .type-select .tab-switch-box .tab-switch + .tab-switch {
+  position: relative;
+}
+
+.menu-detail-area .order-type-area .type-select .tab-switch-box .tab-switch + .tab-switch::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 1px;
+  height: 17px;
+  background-color: #e7e7e7;
+}
+
+.menu-detail-area .order-type-area .type-amount {
+  margin-top: 20px;
+}
+
+.menu-detail-area .order-type-area .type-amount .title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #333;
+}
+
+.menu-detail-area .order-type-area .btn-order {
+  display: block;
+  margin-top: 20px;
+  padding: 0 16px;
+  width: 100%;
+  line-height: 46px;
+  border-radius: 3px;
+  font-weight: 700;
+  background-color: #01d760;
+  color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.menu-detail-area .order-type-area .btn-order:disabled {
+  background-color: #c9c9c9;
+  color: #fff;
+}
+
+.menu-review-area .title {
+  line-height: 22px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #333;
+}
+
+.menu-review-area .title .num {
+  margin-left: 6px;
+  color: #01d760;
+}
+
+.menu-review-area .orderer-img-area {
+  padding-bottom: 22px;
+  background-color: #fff;
+}
+
+.menu-review-area .orderer-img-area .title {
+  padding: 6px 18px 12px;
+}
+
+.menu-review-area .orderer-pic-list {
+  display: flex;
+}
+
+.menu-review-area .orderer-pic-item {
+  display: flex;
+}
+
+.menu-review-area .orderer-pic-item + .orderer-pic-item {
+  margin-left: 1px;
+}
+
+.menu-review-area .orderer-pic-item:first-child::before, .menu-review-area .orderer-pic-item:last-child::after {
+  content: '';
+  width: 18px;
+}
+
+.menu-review-area .orderer-pic-link {
+  position: relative;
+  display: flex;
+}
+
+.menu-review-area .orderer-pic-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.menu-review-area .orderer-review-area {
+  margin-top: 12px;
+  background-color: #fff;
+}
+
+.menu-review-area .orderer-review-area .title {
+  padding: 16px 18px;
+}
+
+.menu-review-area .review-list {
+  border-top: 1px solid #f2f4f6;
+}
+
+.menu-review-area .review-item {
+  padding: 16px 18px;
+  border-bottom: 1px solid #f2f4f6;
+}
+
+.menu-review-area .review-star {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #242424;
+  transform: translateX(-2px);
+}
+
+.menu-review-area .ico-star-group {
+  position: relative;
+  margin-right: 6px;
+  display: inline-block;
+  width: 77px;
+  height: 13px;
+  background: url("/assets/images/ico-star-group.svg") no-repeat center left;
+}
+
+.menu-review-area .ico-star-group .ico-star-group-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/images/ico-star-group-fill.svg") no-repeat center left;
+}
+
+.menu-review-area .review-text {
+  margin-top: 4px;
+  line-height: 24px;
+  color: #333;
+}
+
+.menu-review-area .review-info {
+  margin-top: 8px;
+  font-size: 14px;
+  letter-spacing: -0.4px;
+  color: #8f8f8f;
+}
+
+.menu-review-area .review-date::before {
+  content: '';
+  display: inline-block;
+  margin: 0 8px;
+  width: 1px;
+  height: 12px;
+  background-color: #e1e5e7;
+  vertical-align: middle;
+}
+
+.menu-review-area .btn-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #424242;
+}
+
+.menu-review-area .btn-more::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  margin-left: 5px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  transform: rotate(135deg);
 }
 
 .order-info-area {
