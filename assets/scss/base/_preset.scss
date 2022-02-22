@@ -25,3 +25,13 @@
     -ms-touch-action:none;
     touch-action: none;
 }
+
+// functional css
+// 하나의 클래스가 하나의 기능을 담당
+.fw700 {
+    font-weight: 700;
+}
+
+.color-point {
+    color: $point-color;
+}

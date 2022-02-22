@@ -44,6 +44,12 @@
         letter-spacing: -0.3px;
     }
 
+    .btn-toggle {
+        display: flex; // button과 img 사이의 임의 여백을 없애기 위함
+        margin: -16px;
+        padding: 16px;
+    }
+
     .period {
         font-size: 14px;
         letter-spacing: -0.3px;
